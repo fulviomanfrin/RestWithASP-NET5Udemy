@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "dgSpecHash": "gDTn+aoxvzq1hNaT3JSN6tjXq2Ed5ozZikkuhvKrTWNOE7wh8chghCWsCzHy+F6SpEqRKrw0PHTWzqA44h3Q0Q==",
+  "success": true,
+  "projectFilePath": "D:\\dev\\RestWithASP-NET5Udemy\\RestWithASP-NET5Udemy\\RestWithASPNET5Udemy\\RestWithASPNET5Udemy\\RestWithASPNET5Udemy.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\fulvi\\.nuget\\packages\\microsoft.extensions.apidescription.server\\3.0.0\\microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512",
+    "C:\\Users\\fulvi\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
+    "C:\\Users\\fulvi\\.nuget\\packages\\swashbuckle.aspnetcore\\5.6.3\\swashbuckle.aspnetcore.5.6.3.nupkg.sha512",
+    "C:\\Users\\fulvi\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\5.6.3\\swashbuckle.aspnetcore.swagger.5.6.3.nupkg.sha512",
+    "C:\\Users\\fulvi\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\5.6.3\\swashbuckle.aspnetcore.swaggergen.5.6.3.nupkg.sha512",
+    "C:\\Users\\fulvi\\.nuget\\packages\\swashbuckle.aspnetcore.swaggerui\\5.6.3\\swashbuckle.aspnetcore.swaggerui.5.6.3.nupkg.sha512"
+  ],
+  "logs": []
+}
