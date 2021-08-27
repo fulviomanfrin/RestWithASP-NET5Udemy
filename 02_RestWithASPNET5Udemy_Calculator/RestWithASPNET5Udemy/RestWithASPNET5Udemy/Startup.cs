@@ -10,6 +10,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using RestWithASPNET5Udemy.Services;
+using RestWithASPNET5Udemy.Services.Implementations;
 
 namespace RestWithASPNET5Udemy
 {
@@ -27,6 +29,9 @@ namespace RestWithASPNET5Udemy
         {
 
             services.AddControllers();
+
+            //Dependency Injection
+            services.AddScoped<IPersonService, PersonServiceImplementation>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
