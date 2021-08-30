@@ -12,6 +12,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using RestWithASPNET5Udemy.Services;
 using RestWithASPNET5Udemy.Services.Implementations;
+using RestWithASPNET5Udemy.Model.Context;
+using Microsoft.EntityFrameworkCore;
 
 namespace RestWithASPNET5Udemy
 {
@@ -29,6 +31,9 @@ namespace RestWithASPNET5Udemy
         {
 
             services.AddControllers();
+
+            var connection = Configuration["MySQLConnection:MySQLConnectionString"];
+            services.AddDbContext<MySQLContext>(options => options.UseMySql(connection, ServerVersion.AutoDetect(connection)));
 
             //Dependency Injection
             services.AddScoped<IPersonService, PersonServiceImplementation>();
