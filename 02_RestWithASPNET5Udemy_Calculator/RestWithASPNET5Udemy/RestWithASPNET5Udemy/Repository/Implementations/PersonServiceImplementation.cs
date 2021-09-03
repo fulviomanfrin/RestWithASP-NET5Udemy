@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using System.Threading;
 using RestWithASPNET5Udemy.Model.Context;
 
-namespace RestWithASPNET5Udemy.Services.Implementations
+namespace RestWithASPNET5Udemy.Business.Implementations
 {
     public class PersonServiceImplementation : IPersonService
     {

@@ -1,7 +1,9 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Routing.Constraints;
+using Microsoft.AspNetCore.Mvc.Versioning;
 using Microsoft.Extensions.Logging;
 using RestWithASPNET5Udemy.Model;
-using RestWithASPNET5Udemy.Services;
+using RestWithASPNET5Udemy.Business;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,26 +11,30 @@ using System.Threading.Tasks;
 
 namespace RestWithASPNET5Udemy.Controllers
 {
+    [ApiVersion( "1.0" )]//[Route("api/v{version:apiVersion}/[controller]")]
+    [Route("api/[Controller]")]
     [ApiController]
-    [Route("api/[controller]")]
+    
+    
+
     public class PersonController : ControllerBase
     {
        
 
         private readonly ILogger<PersonController> _logger;
-        private IPersonService _personservice;
+        private IPersonBusiness _personBusiness;
 
-        public PersonController(ILogger<PersonController> logger, IPersonService personService)
+        public PersonController(ILogger<PersonController> logger, IPersonBusiness personBusiness)
         {
             _logger = logger;
-            _personservice = personService;
+            _personBusiness = personBusiness;
         }
 
         [HttpGet]
         public IActionResult Get()
         {
             
-              return Ok(_personservice.FindAll());
+              return Ok(_personBusiness.FindAll());
             
             
         }
@@ -36,27 +42,29 @@ namespace RestWithASPNET5Udemy.Controllers
         [HttpGet("{id}")]
         public IActionResult Get(long id)
         {
-            var person = _personservice.FindById(id);
+            var person = _personBusiness.FindById(id);
             if (person == null) return NotFound();
             return Ok(person);
             
 
         }
+
         [HttpPost]
         public IActionResult Post([FromBody] Person person)
         {
            
             if (person == null) return BadRequest();
-            return Ok(_personservice.Create(person));
+            return Ok(_personBusiness.Create(person));
             
 
         }
+
         [HttpPut]
         public IActionResult Put([FromBody] Person person)
         {
            
             if (person == null) return BadRequest();
-            return Ok(_personservice.Update(person));
+            return Ok(_personBusiness.Update(person));
             
 
         }
@@ -64,7 +72,7 @@ namespace RestWithASPNET5Udemy.Controllers
         [HttpDelete("{id}")]
         public IActionResult Delete(long id)
         {
-            _personservice.Delete(id);
+            _personBusiness.Delete(id);
             return NoContent();
 
 

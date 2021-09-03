@@ -64,3 +64,5 @@ D:\dev\RestWithASP-NET5Udemy\RestWithASP-NET5Udemy\02_RestWithASPNET5Udemy_Calcu
 D:\dev\RestWithASP-NET5Udemy\RestWithASP-NET5Udemy\02_RestWithASPNET5Udemy_Calculator\RestWithASPNET5Udemy\RestWithASPNET5Udemy\bin\Debug\net5.0\System.Diagnostics.DiagnosticSource.dll
 D:\dev\RestWithASP-NET5Udemy\RestWithASP-NET5Udemy\02_RestWithASPNET5Udemy_Calculator\RestWithASPNET5Udemy\RestWithASPNET5Udemy\bin\Debug\net5.0\System.Runtime.CompilerServices.Unsafe.dll
 D:\dev\RestWithASP-NET5Udemy\RestWithASP-NET5Udemy\02_RestWithASPNET5Udemy_Calculator\RestWithASPNET5Udemy\RestWithASPNET5Udemy\obj\Debug\net5.0\RestWithASPNET5Udemy.csproj.CopyComplete
+D:\dev\RestWithASP-NET5Udemy\RestWithASP-NET5Udemy\02_RestWithASPNET5Udemy_Calculator\RestWithASPNET5Udemy\RestWithASPNET5Udemy\bin\Debug\net5.0\Microsoft.AspNetCore.Mvc.Versioning.dll
+D:\dev\RestWithASP-NET5Udemy\RestWithASP-NET5Udemy\02_RestWithASPNET5Udemy_Calculator\RestWithASPNET5Udemy\RestWithASPNET5Udemy\obj\Debug\net5.0\RestWithASPNET5Udemy.MvcApplicationPartsAssemblyInfo.cs
