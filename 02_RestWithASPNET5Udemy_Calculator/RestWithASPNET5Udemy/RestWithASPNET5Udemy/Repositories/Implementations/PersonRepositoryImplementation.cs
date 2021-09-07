@@ -10,29 +10,29 @@ namespace RestWithASPNET5Udemy.Repositories.Implementations
 {
     public class PersonRepositoryImplementation : IPersonRepository
     {
-        private MySQLContext _context;
+        private MySQLContext _personContext;
 
         public PersonRepositoryImplementation(MySQLContext context)
         {
-            _context = context;
+            _personContext = context;
         }
 
         public List<Person> FindAll()
         {
 
-            return _context.Persons.ToList();
+            return _personContext.Persons.ToList();
         }
 
         public Person FindById(long id)
         {
-            return _context.Persons.SingleOrDefault(p => p.Id.Equals(id));
+            return _personContext.Persons.SingleOrDefault(p => p.Id.Equals(id));
         }
         public Person Create(Person person)
         {
             try
             {
-                _context.Add(person);
-                _context.SaveChanges();
+                _personContext.Add(person);
+                _personContext.SaveChanges();
             }
             catch (Exception)
             {
@@ -43,16 +43,16 @@ namespace RestWithASPNET5Udemy.Repositories.Implementations
         }
         public Person Update(Person person)
         {
-            if(!Exists(person.Id)) return new Person();
+            if(!Exists(person.Id)) return null;
 
-            var result = _context.Persons.SingleOrDefault(p => p.Id.Equals(person.Id));
+            var result = _personContext.Persons.SingleOrDefault(p => p.Id.Equals(person.Id));
             if (result != null)
             {
                 try
 
                 {
-                    _context.Entry(result).CurrentValues.SetValues(person);
-                    _context.SaveChanges();
+                    _personContext.Entry(result).CurrentValues.SetValues(person);
+                    _personContext.SaveChanges();
                 }
                 catch (Exception)
                 {
@@ -66,14 +66,14 @@ namespace RestWithASPNET5Udemy.Repositories.Implementations
 
         public void Delete(long id)
         {
-            var result = _context.Persons.SingleOrDefault(p => p.Id.Equals(id));
+            var result = _personContext.Persons.SingleOrDefault(p => p.Id.Equals(id));
             if (result != null)
             {
                 try
 
                 {
-                    _context.Persons.Remove(result);
-                    _context.SaveChanges();
+                    _personContext.Persons.Remove(result);
+                    _personContext.SaveChanges();
                 }
                 catch (Exception)
                 {
@@ -86,7 +86,7 @@ namespace RestWithASPNET5Udemy.Repositories.Implementations
         
         public bool Exists(long id)
         {
-            return _context.Persons.Any(p => p.Id.Equals(id));
+            return _personContext.Persons.Any(p => p.Id.Equals(id));
         }
     }
     
