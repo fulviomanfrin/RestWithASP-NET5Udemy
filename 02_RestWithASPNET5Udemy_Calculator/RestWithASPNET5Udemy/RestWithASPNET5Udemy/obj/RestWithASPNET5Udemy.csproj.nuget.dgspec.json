@@ -44,6 +44,14 @@
               "target": "Package",
               "version": "[3.1.0-alpha1, )"
             },
+            "Microsoft.AspNetCore.Authentication.JwtBearer": {
+              "target": "Package",
+              "version": "[5.0.9, )"
+            },
+            "Microsoft.AspNetCore.Mvc.Formatters.Xml": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
             "Microsoft.AspNetCore.Mvc.Versioning": {
               "target": "Package",
               "version": "[5.0.0, )"
@@ -67,6 +75,10 @@
             "Serilog.Sinks.Console": {
               "target": "Package",
               "version": "[4.0.1-dev-00876, )"
+            },
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[6.2.1, )"
             }
           },
           "imports": [

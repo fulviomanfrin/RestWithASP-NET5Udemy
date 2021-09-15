@@ -1,25 +1,21 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Versioning;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using RestWithASPNET5Udemy.Business;
 using RestWithASPNET5Udemy.Business.Implementations;
 using RestWithASPNET5Udemy.Model.Context;
 using Microsoft.EntityFrameworkCore;
 using RestWithASPNET5Udemy.Repositories;
-using RestWithASPNET5Udemy.Repositories.Implementations;
 using Serilog;
-using Pomelo.EntityFrameworkCore.MySql;
-
+using RestWithASPNET5Udemy.Repositories.Generic;
+using System.Net.Http.Headers;
+using Microsoft.OpenApi.Models;
+using Microsoft.AspNetCore.Rewrite;
 
 namespace RestWithASPNET5Udemy
 {
@@ -44,6 +40,13 @@ namespace RestWithASPNET5Udemy
         {
             
 
+            services.AddCors(options => options.AddDefaultPolicy(builder =>
+            {
+                builder.AllowAnyOrigin()
+                .AllowAnyMethod()
+                .AllowAnyHeader();
+            }));
+
             services.AddControllers();
 
             var connection = Configuration["MySQLConnection:MySQLConnectionString"];
@@ -53,9 +56,36 @@ namespace RestWithASPNET5Udemy
             {
                 MigrateDatabase(connection);
             }
+
+            services.AddMvc(options =>
+            {
+                options.RespectBrowserAcceptHeader = true;
+
+                options.FormatterMappings.SetMediaTypeMappingForFormat("xml", MediaTypeHeaderValue.Parse("application/xml").ToString());
+                options.FormatterMappings.SetMediaTypeMappingForFormat("json", MediaTypeHeaderValue.Parse("application/json").ToString());
+
+
+            })
+                .AddXmlSerializerFormatters();
             
             //Versioning
             services.AddMvc();
+
+            services.AddSwaggerGen(c =>
+            {
+                c.SwaggerDoc("v1",
+                    new OpenApiInfo
+                    {
+                        Title = "REST API's FROM 0 to Azure with ASP.NET Core 5 and Docker",
+                        Version = "v1",
+                        Description = "API Resful developed in course 'REST API's FROM 0 to Azure with ASP.NET Core 5 and Docker'",
+                        Contact = new OpenApiContact
+                        {
+                            Name = "Fulvio Manfrin",
+                            Url = new Uri("https://github.com/fulviomanfrin")
+                        }
+                    });
+            });
 
             services.AddApiVersioning(
             config =>
@@ -68,9 +98,10 @@ namespace RestWithASPNET5Udemy
 
             //Dependency Injection
             services.AddScoped<IPersonBusiness, PersonBusinessImplementation>();
-            services.AddScoped<IPersonRepository, PersonRepositoryImplementation>();
-            services.AddScoped<IBookRepository, BookRepositoryImplementation>();
             services.AddScoped<IBookBusiness, BookBusinessImplementation>();
+            
+
+            services.AddScoped(typeof(IRepository<>), typeof(GenericRepository<>));
         }
 
         
@@ -86,6 +117,21 @@ namespace RestWithASPNET5Udemy
             app.UseHttpsRedirection();
 
             app.UseRouting();
+
+            app.UseCors();
+
+            app.UseSwagger();
+            
+            app.UseSwaggerUI(c =>
+            {
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "REST API's FROM 0 to Azure with ASP.NET Core 5 and Docker - v1");
+            });
+
+            var option = new RewriteOptions();
+            
+            option.AddRedirect("^$", "swagger");
+
+            app.UseRewriter(option);
 
             app.UseAuthorization();
 

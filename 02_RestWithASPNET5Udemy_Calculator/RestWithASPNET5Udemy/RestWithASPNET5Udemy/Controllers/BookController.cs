@@ -1,18 +1,13 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Routing.Constraints;
-using Microsoft.AspNetCore.Mvc.Versioning;
 using Microsoft.Extensions.Logging;
-using RestWithASPNET5Udemy.Model;
 using RestWithASPNET5Udemy.Business;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using RestWithASPNET5Udemy.Data.VO;
 
 namespace RestWithASPNET5Udemy.Controllers
 {
 
     [ApiController]
+    
     [Route("api/books")]
     public class BookController : ControllerBase
     {
@@ -45,7 +40,7 @@ namespace RestWithASPNET5Udemy.Controllers
         }
 
         [HttpPost]
-        public IActionResult Post([FromBody] Book book)
+        public IActionResult Post([FromBody] BookVO book)
         {
 
             if (book == null) return BadRequest();
@@ -55,7 +50,7 @@ namespace RestWithASPNET5Udemy.Controllers
         }
 
         [HttpPut]
-        public IActionResult Put([FromBody] Book book)
+        public IActionResult Put([FromBody] BookVO book)
         {
 
             if (book == null) return BadRequest();

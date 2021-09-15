@@ -94,3 +94,14 @@ D:\dev\RestWithASP-NET5Udemy\RestWithASP-NET5Udemy\02_RestWithASPNET5Udemy_Calcu
 D:\dev\RestWithASP-NET5Udemy\RestWithASP-NET5Udemy\02_RestWithASPNET5Udemy_Calculator\RestWithASPNET5Udemy\RestWithASPNET5Udemy\bin\Debug\net5.0\System.Security.Cryptography.ProtectedData.dll
 D:\dev\RestWithASP-NET5Udemy\RestWithASP-NET5Udemy\02_RestWithASPNET5Udemy_Calculator\RestWithASPNET5Udemy\RestWithASPNET5Udemy\bin\Debug\net5.0\System.Xml.XPath.XmlDocument.dll
 D:\dev\RestWithASP-NET5Udemy\RestWithASP-NET5Udemy\02_RestWithASPNET5Udemy_Calculator\RestWithASPNET5Udemy\RestWithASPNET5Udemy\bin\Debug\net5.0\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
+D:\dev\RestWithASP-NET5Udemy\RestWithASP-NET5Udemy\02_RestWithASPNET5Udemy_Calculator\RestWithASPNET5Udemy\RestWithASPNET5Udemy\bin\Debug\net5.0\Microsoft.OpenApi.dll
+D:\dev\RestWithASP-NET5Udemy\RestWithASP-NET5Udemy\02_RestWithASPNET5Udemy_Calculator\RestWithASPNET5Udemy\RestWithASPNET5Udemy\bin\Debug\net5.0\Swashbuckle.AspNetCore.Swagger.dll
+D:\dev\RestWithASP-NET5Udemy\RestWithASP-NET5Udemy\02_RestWithASPNET5Udemy_Calculator\RestWithASPNET5Udemy\RestWithASPNET5Udemy\bin\Debug\net5.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+D:\dev\RestWithASP-NET5Udemy\RestWithASP-NET5Udemy\02_RestWithASPNET5Udemy_Calculator\RestWithASPNET5Udemy\RestWithASPNET5Udemy\bin\Debug\net5.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+D:\dev\RestWithASP-NET5Udemy\RestWithASP-NET5Udemy\02_RestWithASPNET5Udemy_Calculator\RestWithASPNET5Udemy\RestWithASPNET5Udemy\bin\Debug\net5.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+D:\dev\RestWithASP-NET5Udemy\RestWithASP-NET5Udemy\02_RestWithASPNET5Udemy_Calculator\RestWithASPNET5Udemy\RestWithASPNET5Udemy\bin\Debug\net5.0\Microsoft.IdentityModel.JsonWebTokens.dll
+D:\dev\RestWithASP-NET5Udemy\RestWithASP-NET5Udemy\02_RestWithASPNET5Udemy_Calculator\RestWithASPNET5Udemy\RestWithASPNET5Udemy\bin\Debug\net5.0\Microsoft.IdentityModel.Logging.dll
+D:\dev\RestWithASP-NET5Udemy\RestWithASP-NET5Udemy\02_RestWithASPNET5Udemy_Calculator\RestWithASPNET5Udemy\RestWithASPNET5Udemy\bin\Debug\net5.0\Microsoft.IdentityModel.Protocols.dll
+D:\dev\RestWithASP-NET5Udemy\RestWithASP-NET5Udemy\02_RestWithASPNET5Udemy_Calculator\RestWithASPNET5Udemy\RestWithASPNET5Udemy\bin\Debug\net5.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+D:\dev\RestWithASP-NET5Udemy\RestWithASP-NET5Udemy\02_RestWithASPNET5Udemy_Calculator\RestWithASPNET5Udemy\RestWithASPNET5Udemy\bin\Debug\net5.0\Microsoft.IdentityModel.Tokens.dll
+D:\dev\RestWithASP-NET5Udemy\RestWithASP-NET5Udemy\02_RestWithASPNET5Udemy_Calculator\RestWithASPNET5Udemy\RestWithASPNET5Udemy\bin\Debug\net5.0\System.IdentityModel.Tokens.Jwt.dll

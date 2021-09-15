@@ -1,16 +1,13 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations.Schema;
+using RestWithASPNET5Udemy.Model.Base;
 
 namespace RestWithASPNET5Udemy.Model
 {
     [Table("books")]
-    public class Book
+    public class Book : BaseEntity
     {
-        [Column("id")]
-        public long Id { get; set; }
+        
         [Column("author")]
         public string Author { get; set; }
         [Column("launch_date")]
